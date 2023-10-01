@@ -1,0 +1,11 @@
+flask==2.2.5
+Flask-RESTful
+Flask-SQLAlchemy
+flask-login
+SQLAlchemy
+psycopg2
+alembic
+werkzeug==2.2.2
+marshmallow==3.20.1
+marshmallow-sqlalchemy==0.29.0
+flask_marshmallow

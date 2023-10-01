@@ -1,0 +1,55 @@
+curl --location 'http://127.0.0.1:5000/health-check'
+
+curl --location 'localhost:5000/user/create' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "alpha",
+    "mobile_number": "9876543210",
+    "email": "alpha@@gmail.com"
+    }'
+
+curl --location 'localhost:5000/users'
+
+curl --location 'localhost:5000/user/2'
+
+curl --location 'localhost:5000/pay-bill' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "electricity",
+    "total_amount": 100.00,
+    "split_type": "SPLIT",
+    "paid_by": 4,
+    "amount_dist": {
+        "1": 1, "2": 2, "3": 4
+    }
+}'
+
+curl --location 'localhost:5000/pay-bill' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "electricity",
+    "total_amount": 100.00,
+    "split_type": "EXACT",
+    "paid_by": 4,
+    "amount_dist": {
+        "1": 10, "2": 10, "3": 80
+    }
+}'
+
+curl --location 'localhost:5000/pay-bill' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "electricity",
+    "total_amount": 100.00,
+    "split_type": "PERCENT",
+    "paid_by": 4,
+    "amount_dist": {
+        "1": 10, "2": 10, "3": 80
+    }
+}'
+
+curl --location 'localhost:5000/get-expenses/2'
+
+curl --location 'localhost:5000/get-balance/1'
+
+curl --location 'localhost:5000/get-balances'

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: splitwisedb
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    networks:
+      - mynetwork
+
+  web:
+    build: .
+    command: bash -c "app/script.sh"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://root:root@postgres:5432/splitwisedb
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:

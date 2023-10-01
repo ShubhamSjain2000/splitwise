@@ -1,0 +1,18 @@
+
+# SplitWise
+A tool to split bills between users
+
+# prerequisites
+* Docker
+* Docker Compose
+
+# run
+docker compose up --build
+
+# test
+password as hardcoded as no way to share .env
+You can use any DBMS viewer to see the Database
+Navigate to app/fixtures/curl.txt
+You can run curls directly
+To check DB Schema navigate to 
+

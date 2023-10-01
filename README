@@ -14,5 +14,5 @@ password as hardcoded as no way to share .env
 You can use any DBMS viewer to see the Database
 Navigate to app/fixtures/curl.txt
 You can run curls directly
-To check DB Schema navigate to 
+To check DB Schema navigate to app/fixtures/splitwisedb.png
 
